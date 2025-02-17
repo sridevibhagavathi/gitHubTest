@@ -35,7 +35,7 @@ public class SampleTest1 {
 		//System.setProperty("webdriver.chrome.driverf", "download exe file in your local, paste that path here");
 			ChromeOptions opt=new ChromeOptions();
 			opt.addArguments("--remote-allow-origins=*");
-			WebDriver wd=new ChromeDriver();
+			WebDriver wd=new ChromeDriver(opt);
 			wd.manage().window().maximize();
 			wd.get("https://www.google.com/");
 			wd.findElement(By.name("q")).sendKeys("Chennai");
