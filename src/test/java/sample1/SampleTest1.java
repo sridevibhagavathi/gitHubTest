@@ -35,20 +35,18 @@ public class SampleTest1 {
 		//System.setProperty("webdriver.chrome.driverf", "download exe file in your local, paste that path here");
 			ChromeOptions opt=new ChromeOptions();
 			opt.addArguments("--remote-allow-origins=*");
-			WebDriver wd=new ChromeDriver(opt);
+			wd=new ChromeDriver(opt);
 			wd.manage().window().maximize();
 			wd.get("https://www.google.com/");
 			wd.findElement(By.name("q")).sendKeys("Chennai");
 			wd.findElement(By.name("q")).submit();
 		
 	}
-	
+
 	@AfterMethod
 	public void tearDown() throws IOException{
 		
 		File src=((TakesScreenshot)wd).getScreenshotAs(OutputType.FILE);
 		FileHandler.copy(src, new File("C:/Users/Sridevi Bhagavathi/workspace/GitHubTest/screenshot/google.png"));
-	}
-	
-
+		}
 }

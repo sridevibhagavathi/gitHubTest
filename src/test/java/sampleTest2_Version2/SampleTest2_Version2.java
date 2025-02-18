@@ -24,22 +24,13 @@ public class SampleTest2_Version2 {
 		@Test
 		public void loadGoogle(){
 			
-			//webdrivermanager().chromedriver().setup();
-			
-			//load browser with old version code(sytem. setproperty)
-			//check chrome verion in your system chrome browser
-			//go to google search with google download, match with yur chrome version , there is exe file of all versions
-			//that version will be pased in system.set properly value, it was used in old version automation testing
-			//webdrivermanager().chromedriver().setup(); - this is latest one
-			//webdriver.chrome.driverf - thisis default key, which they provided, use only it
-			//System.setProperty("webdriver.chrome.driverf", "download exe file in your local, paste that path here");
 				ChromeOptions opt=new ChromeOptions();
 				opt.addArguments("--remote-allow-origins=*");
-				WebDriver wd=new ChromeDriver(opt);
+				wd=new ChromeDriver(opt);
 				wd.manage().window().maximize();
 				wd.get("https://www.bing.com/");
-				wd.findElement(By.name("q")).sendKeys("Chennai");
-				wd.findElement(By.name("q")).submit();
+				wd.findElement(By.id("sb_form_q")).sendKeys("Chennai");
+				wd.findElement(By.id("sb_form_q")).submit();
 			
 		}
 		
